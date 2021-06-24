@@ -2,12 +2,13 @@
 
 pipeline {
 
-    agent {
-        docker {
-            image 'node'
-            args '-u root'
-        }
-    }
+//     agent {
+//         docker {
+//             image 'node'
+//             args '-u root'
+//         }
+//     }
+    agent { label 'my-defined-label' }
 
     stages {
         stage('Build') {

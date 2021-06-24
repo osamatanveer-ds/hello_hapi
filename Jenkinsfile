@@ -4,14 +4,14 @@ pipeline {
 
 
 //     agent { label 'my-defined-label' }
-        agent any
-    stages {
+//         agent any
+//     stages {
         
-        stage('Stage 1') {
-            steps {
-                echo 'Hello world!' 
-            }
-        }
+//         stage('Stage 1') {
+//             steps {
+//                 echo 'Hello world!' 
+//             }
+//         }
 //         stage('Build') {
 //             steps {
 //                 echo 'Building...'
@@ -24,5 +24,26 @@ pipeline {
 //                 sh 'npm test'
 //             }
 //         }
+//     }
+        
+        agent none
+    stages {
+        stage('Example Build') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Example Deploy') {
+            agent {
+                label "some-label"
+            }
+            when {
+                beforeAgent true
+                branch 'master'
+            }
+            steps {
+                echo 'Deploying'
+            }
+        }
     }
 }

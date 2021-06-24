@@ -4,27 +4,27 @@ pipeline {
 
 
 //     agent { label 'my-defined-label' }
-//         agent any
-//     stages {
+        agent any
+    stages {
         
-//         stage('Stage 1') {
-//             steps {
-//                 echo 'Hello world!' 
-//             }
-//         }
-//         stage('Build') {
-//             steps {
-//                 echo 'Building...'
-//                 sh 'npm install'
-//             }
-//         }
-//         stage('Test') {
-//             steps {
-//                 echo 'Testing...'
-//                 sh 'npm test'
-//             }
-//         }
-//     }
+        stage('Stage 1') {
+            steps {
+                echo 'Hello world!' 
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                sh 'npm test'
+            }
+        }
+    }
         
 //         agent none
 //     stages {
@@ -48,20 +48,20 @@ pipeline {
 //     }
         
         
-        agent any
-    stages {
-        stage('Example Build') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('Example Deploy') {
-            when {
-                branch 'production'
-            }
-            steps {
-                echo 'Deploying'
-            }
-        }
-    }
+//         agent any
+//     stages {
+//         stage('Example Build') {
+//             steps {
+//                 echo 'Hello World'
+//             }
+//         }
+//         stage('Example Deploy') {
+//             when {
+//                 branch 'production'
+//             }
+//             steps {
+//                 echo 'Deploying'
+//             }
+//         }
+//     }
 }
